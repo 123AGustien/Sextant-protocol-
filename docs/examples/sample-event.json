@@ -1,0 +1,11 @@
+{
+  "event_type": "service.request",
+  "service": "api-gateway",
+  "trace_id": "trace-abc-123",
+  "timestamp": "2026-01-01T00:00:00Z",
+  "status": "success",
+  "metadata": {
+    "region": "ap-southeast-1",
+    "latency_ms": 120
+  }
+}
