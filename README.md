@@ -1,7 +1,4 @@
-
-# Sextant Protocol
-
-Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
+#Sextant Protocol – Observability Integration & Telemetry Simulation Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
 
 It provides deterministic analysis of distributed systems through:
 
