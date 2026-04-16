@@ -1,41 +1,38 @@
+
 # Sextant Protocol
 
-Sextant Protocol is a read-only observability integration layer designed to extend platforms such as Datadog.
+Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
 
-It enables deterministic analysis of distributed systems through dependency mapping, trace reconstruction, and cascade failure simulation.
+It provides deterministic analysis of distributed systems through:
 
----
-
-## Key Capabilities
-
-- Read-only telemetry ingestion (logs, metrics, traces, webhooks)
-- Dependency graph reconstruction across services
-- Deterministic trace replay for incident analysis
-- Offline cascade failure simulation
+- Dependency graph reconstruction
+- Trace lineage analysis
+- Event replay
+- Offline failure simulation
 
 ---
 
 ## Integration Model
 
-- API-driven (Datadog Logs, Metrics, Traces APIs)
-- Webhook compatible ingestion
-- No write-back to production systems
-- Sandbox-first evaluation design
+- API-driven ingestion (logs, metrics, traces, webhooks)
+- Read-only telemetry processing
+- Sandbox or evaluation environments only
+- No modification of production systems
 
 ---
 
-## Architecture Flow
+## Architecture Overview
 
-1. Ingest telemetry data (read-only)
+1. Ingest telemetry data
 2. Build dependency graph
-3. Reconstruct trace lineage
-4. Replay system events
+3. Reconstruct trace relationships
+4. Replay event sequences
 5. Simulate failure propagation
 
 ---
 
 ## Status
 
-Early-stage integration (sandbox evaluation phase)
+Early-stage evaluation framework
 
-Open to technical evaluation and partner alignment.
+Designed for technical review and sandbox alignment with observability platforms.
