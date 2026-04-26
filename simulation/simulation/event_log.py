@@ -1,6 +1,6 @@
 class EventLog:
     """
-simulation/graph_view.py
+simulation/event_log.py
     """
 
     def __init__(self):
