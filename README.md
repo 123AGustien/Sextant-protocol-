@@ -1,5 +1,16 @@
 #Sextant Protocol – Observability Integration & Telemetry Simulation Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
 
+
+## ▶ Run Simulation
+
+Open the workflow here:
+
+👉 https://github.com/123AGustien/Sextant-protocol-/actions
+
+Then select:
+- Sextant Grid Simulation Execution  
+- Click “Run workflow”
+
 It provides deterministic analysis of distributed systems through:
 
 - Dependency graph reconstruction
