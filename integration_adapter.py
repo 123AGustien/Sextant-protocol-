@@ -1,12 +1,20 @@
 # integration_adapter.py
 
-from core.engine import DependencyGraph  # your existing system
+from core.engine import DependencyGraph
 from grid_resilience.grid_nodes import GridNetwork, GridNode
 from grid_resilience.failure_propagation import FailurePropagationEngine
 from grid_resilience.resilience_engine import ResilienceEngine
 
 
 class GridIntegrationAdapter:
+    """
+    Integration layer between:
+    - Core dependency model
+    - Grid simulation model
+    - Failure propagation engine
+    - Resilience analytics engine
+    """
+
     def __init__(self):
         self.core_graph = DependencyGraph()
         self.grid_network = GridNetwork()
@@ -14,7 +22,7 @@ class GridIntegrationAdapter:
         self.resilience_engine = ResilienceEngine(self.grid_network)
 
     # ----------------------------
-    # Map core nodes → grid nodes
+    # Map abstract system → physical grid nodes
     # ----------------------------
     def map_core_to_grid(self, core_nodes):
         for node in core_nodes:
@@ -26,7 +34,7 @@ class GridIntegrationAdapter:
             self.grid_network.add_node(grid_node)
 
     # ----------------------------
-    # Sync dependency graph → grid dependencies
+    # Build dependency relationships
     # ----------------------------
     def build_dependencies(self, edges):
         for edge in edges:
@@ -36,15 +44,22 @@ class GridIntegrationAdapter:
             )
 
     # ----------------------------
-    # Run full simulation
+    # Execute simulation scenario
     # ----------------------------
     def run_simulation(self, load_map, failure_start=None):
-        # 1. Apply load
+        """
+        Executes a full deterministic scenario:
+        1. Load application
+        2. Optional failure propagation
+        3. Resilience evaluation
+        """
+
+        # Step 1: Apply grid load conditions
         self.grid_network.simulate_load(load_map)
 
-        # 2. Trigger failure (if any)
+        # Step 2: Trigger cascading failure (if provided)
         if failure_start:
             self.failure_engine.simulate_failure_chain(failure_start)
 
-        # 3. Compute resilience
+        # Step 3: Return resilience analytics output
         return self.resilience_engine.system_health_report()
