@@ -1,4 +1,4 @@
-#Sextant Protocol – Observability Integration & Telemetry Simulation Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
+#Sextant Protocol Grid Résilience– Observability Integration & Telemetry Simulation Sextant Protocol is a read-only analytical framework designed for evaluation alongside observability systems.
 
 
 ## ▶ Run Simulation
