@@ -26,6 +26,16 @@ class SimulationRunner:
         """
         return compute_resilience(self.nodes)
 
-    def run(self, root_node):
+    def run(self, nodes, root_node):
+        """
+        SAFE ENTRY POINT (fixed version)
+        """
+
+        # Ensure system is loaded for consistency
+        self.load_nodes(nodes)
+
+        # Trigger cascade
         self.trigger_event(root_node)
+
+        # Evaluate result
         return self.evaluate_system()
