@@ -1,6 +1,6 @@
 class EventLog:
     """
-    Stores step-by-step simulation events for replay/debugging.
+    simulation/event_log.py
     """
 
     def __init__(self):
