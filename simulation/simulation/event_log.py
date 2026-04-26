@@ -6,11 +6,12 @@ class EventLog:
     def __init__(self):
         self.events = []
 
-    def record(self, event_type, node_name, message):
+    def record(self, event_type, node_name, message, source=None):
         self.events.append({
             "type": event_type,
             "node": node_name,
-            "message": message
+            "message": message,
+            "source": source
         })
 
     def get_all(self):
