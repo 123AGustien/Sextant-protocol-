@@ -25,9 +25,14 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install dependencies (if available)
         run: |
-          pip install -r requirements.txt || echo "No requirements file found"
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; else echo "No requirements.txt found"; fi
+
+      - name: Ensure output directory exists
+        run: |
+          mkdir -p sandbox_validation/outputs
 
       - name: Run Grid Simulation
         run: |
