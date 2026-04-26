@@ -1,6 +1,8 @@
+
 from grid_nodes import Node
-from failure_propagation import propagate_failure
+from failure_propagation import FailurePropagationEngine
 from resilience_engine import compute_resilience
+from simulation.event_log import EventLog
 
 
 class SimulationRunner:
@@ -10,6 +12,8 @@ class SimulationRunner:
 
     def __init__(self):
         self.nodes = []
+        self.log = EventLog()
+        self.engine = None
 
     def load_nodes(self, nodes):
         self.nodes = nodes
@@ -18,7 +22,8 @@ class SimulationRunner:
         """
         Start failure cascade from a single node.
         """
-        propagate_failure(root_node)
+        if self.engine:
+            self.engine.simulate_failure_chain(root_node)
 
     def evaluate_system(self):
         """
@@ -28,14 +33,26 @@ class SimulationRunner:
 
     def run(self, nodes, root_node):
         """
-        SAFE ENTRY POINT (fixed version)
+        SAFE ENTRY POINT (fixed + complete version)
         """
 
-        # Ensure system is loaded for consistency
+        # 1. Load nodes
         self.load_nodes(nodes)
 
-        # Trigger cascade
+        # 2. Build engine with logging
+        self.engine = FailurePropagationEngine(
+            network=self,
+            log=self.log
+        )
+
+        # 3. Run simulation
         self.trigger_event(root_node)
 
-        # Evaluate result
-        return self.evaluate_system()
+        # 4. Evaluate result
+        result = self.evaluate_system()
+
+        # 5. Return full report
+        return {
+            "resilience": result,
+            "events": self.log.get_all()
+        }
