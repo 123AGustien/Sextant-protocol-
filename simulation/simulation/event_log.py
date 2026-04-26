@@ -1,7 +1,8 @@
 class EventLog:
     """
-simulation/graph_view.py
-    """
+simulation/event_log.py
+    
+simul  """
 
     def __init__(self):
         self.events = []
