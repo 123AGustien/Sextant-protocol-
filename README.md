@@ -12,3 +12,7 @@ Access the CI/CD simulation workflow
 From there:
 1. Select workflow: **Sextant Grid Simulation Execution**
 2. Click **Run workflow**
+
+3. Code: https://github.com/123AGustien/Sextant-protocol-⁠�
+Actions: https://github.com/123AGustien/Sextant-protocol-/actions⁠�
+Issues: https://github.com/123AGustien/Sextant-protocol-/issues⁠�
