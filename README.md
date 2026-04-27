@@ -1,31 +1,81 @@
+# ⚡ Sextant Protocol – Power Grid Dependency Modelling & Failure Simulation
 
-⚡ Sextant Protocol – Power Grid Dependency Modelling & Failure Simulation
-Sextant Protocol is a deterministic simulation framework for electrical power grid systems, designed to model dependency structures and analyse cascading failure propagation under controlled, read-only environments.
-This framework is applied to electrical power grid infrastructure systems for resilience analysis, dependency mapping, and failure scenario simulation.
-It enables structured evaluation of how disturbances propagate across interconnected grid components such as substations, transmission lines, and generation nodes.
-▶ Run Simulation
-Open the workflow here:
-👉 https://github.com/123AGustien/Sextant-protocol-/actions⁠�
-Then select:
-Sextant Grid Simulation Execution
-Click “Run workflow”
-System Capabilities
-The framework provides deterministic modelling of power grid behaviour through:
-Grid dependency graph construction (nodes: generators, substations, transformers)
-Cascading failure propagation simulation
-Event sequence reconstruction and replay
-Offline scenario-based stress simulation (e.g., overload, line failure, node isolation)
-Integration Model
-Structured ingestion of grid event data (telemetry, logs, operational signals)
-Read-only analytical processing of system state
-Sandbox-contained execution for scenario evaluation
-No interaction with live or production grid control systems
-Architecture Overview
-Ingest grid system event data
-Construct dependency graph of electrical infrastructure
-Model system state transitions under stress conditions
-Simulate failure propagation across connected components
-Reconstruct and analyse event sequences for resilience assessment
-Status
-Early-stage deterministic simulation framework for power grid resilience and infrastructure dependency analysis.
-Designed for controlled evaluation, research, and system behaviour modelling.
+Sextant Protocol is a deterministic simulation framework for electrical power grid systems, designed to model dependency structures and analyse cascading failure propagation within controlled, read-only environments.
+
+The framework supports resilience analysis, dependency mapping, and structured failure scenario simulation across interconnected grid infrastructure components.
+
+---
+
+## ▶ Run Simulation
+
+Access the CI/CD simulation workflow here:  
+https://github.com/123AGustien/Sextant-protocol-/actions
+
+Steps:
+1. Select **"Sextant Grid Simulation Execution"**
+2. Click **"Run workflow"**
+3. Execute simulation with predefined scenario inputs
+
+---
+
+## 🧠 System Capabilities
+
+- Deterministic dependency graph construction  
+  (nodes: generators, substations, transformers)  
+
+- Cascading failure propagation simulation  
+
+- Event sequence reconstruction and replay  
+
+- Scenario-based stress simulation  
+  (e.g., overload, line failure, node isolation)  
+
+---
+
+## 🔗 Integration Model
+
+- Structured ingestion of grid event data  
+  (telemetry, logs, operational signals)  
+
+- Read-only analytical processing  
+
+- Sandbox-contained execution environment  
+
+- No interaction with live or production grid systems  
+
+---
+
+## 🏗️ Architecture Overview
+
+1. Ingest grid system event data  
+2. Construct dependency graph  
+3. Model system state transitions  
+4. Simulate cascading failures  
+5. Reconstruct event timelines  
+6. Output traceable results for analysis  
+
+---
+
+## 🔒 Safety Boundary
+
+- No control interface to physical grid systems  
+- No write capability to operational infrastructure  
+- Fully sandboxed execution via CI/CD workflows  
+
+---
+
+## 📊 Status
+
+Early-stage deterministic simulation framework designed for:
+
+- Grid resilience analysis  
+- Infrastructure dependency modelling  
+- Controlled scenario evaluation  
+
+---
+
+## 🔬 Positioning
+
+This repository represents the **core simulation kernel (Cascade Lens architecture)** underpinning the Sextant Grid Digital Twin system.
+
+It provides the foundational modelling logic used across all higher-level simulation and replay environments.
