@@ -10,8 +10,19 @@ The framework supports resilience analysis, dependency mapping, and structured f
 
 Access the CI/CD simulation workflow here:  
 
-https://github.com/123AGustien/Sextant-protocol-/actions/runs/
+
+👉 https://github.com/123AGustien/Sextant-protocol-⁠�
+
+
+👉 https://github.com/123AGustien/Sextant-protocol-/actions⁠�
+
 👉 https://github.com/123AGustien/Sextant-protocol-/actions/workflows/sextant-grid-simulation.yml⁠�
+
+
+https://github.com/123AGustien/Sextant-protocol-/actions/runs/
+👉
+https
+httpsttps://github.com/123AGustien/Sextant-protocol-/actions/workflows/sextant-grid-simulation.yml⁠�
 Steps:
 1. Select **"Sextant Grid Simulation Execution"**
 2. Click **"Run workflow"**
