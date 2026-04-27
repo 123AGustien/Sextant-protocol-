@@ -27,25 +27,15 @@ jobs:
 
       - name: Execute Grid Simulation
         run: |
-          echo "=== Sextant Grid Digital Twin Execution Start ==="
+          echo "=== Sextant Grid Execution Start ==="
           echo "Trigger Node: ${{ inputs.trigger_node }}"
           echo "Load Profile: ${{ inputs.load_profile }}"
           echo "Timestamp: $(date)"
-          echo "-----------------------------------------------"
 
           if python sandbox_validation/test_runs/run_grid.py \
             --trigger_node "${{ inputs.trigger_node }}" \
             --load_profile "${{ inputs.load_profile }}"; then
-
-            echo "-----------------------------------------------"
-            echo "Simulation Status: SUCCESS"
-            echo "=== Execution Completed Successfully ==="
-
+            echo "SUCCESS"
           else
-
-            echo "-----------------------------------------------"
-            echo "Simulation Status: NON-CRITICAL ERROR"
-            echo "Execution continued under controlled conditions"
-            echo "=== Execution Completed with Warnings ==="
-
+            echo "WARNING"
           fi
