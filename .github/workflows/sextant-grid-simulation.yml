@@ -25,8 +25,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Execute Grid Simulation (Sandbox Mode)
+      - name: Execute Sextant Grid Simulation (Sandbox Mode)
         run: |
+          set -e
+
           echo "======================================"
           echo "Sextant Grid Simulation Execution"
           echo "======================================"
@@ -35,10 +37,10 @@ jobs:
           echo "Timestamp     : $(date)"
           echo "--------------------------------------"
 
-          python3 sandbox_validation/test_runs/run_grid.py \
+          python3 sandbox_validation/run_grid.py \
             --trigger_node "${{ inputs.trigger_node }}" \
             --load_profile "${{ inputs.load_profile }}"
 
           echo "--------------------------------------"
-          echo "Execution Completed"
+          echo "Execution Completed Successfully"
           echo "======================================"
