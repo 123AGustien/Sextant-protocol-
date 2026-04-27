@@ -6,7 +6,7 @@
     echo "Timestamp: $(date)"
     echo "-----------------------------------------------"
 
-    if python -m sandbox_validation.test_runs.run_simulation \
+    if python sandbox_validation/test_runs/run_grid.py \
       --trigger_node "${{ inputs.trigger_node }}" \
       --load_profile "${{ inputs.load_profile }}"; then
 
