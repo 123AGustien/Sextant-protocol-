@@ -1,4 +1,4 @@
-name: Sextant Grid Simulation Execution
+   name: Sextant Grid Simulation Execution
 
 on:
   workflow_dispatch:
@@ -27,14 +27,15 @@ jobs:
 
       - name: Execute Sextant Grid Simulation (Sandbox Mode)
         run: |
-          set -e
+          set -euo pipefail
 
           echo "======================================"
           echo "Sextant Grid Simulation Execution"
           echo "======================================"
           echo "Trigger Node  : ${{ inputs.trigger_node }}"
           echo "Load Profile  : ${{ inputs.load_profile }}"
-          echo "Timestamp     : $(date)"
+          echo "Timestamp     : $(date -u)"
+          echo "Repo Path     : $(pwd)"
           echo "--------------------------------------"
 
           python3 sandbox_validation/run_grid.py \
@@ -43,4 +44,4 @@ jobs:
 
           echo "--------------------------------------"
           echo "Execution Completed Successfully"
-          echo "======================================"
+          echo "======================================" 
