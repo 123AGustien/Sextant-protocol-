@@ -9,10 +9,10 @@ def main():
     args = parser.parse_args()
 
     print("======================================")
-    print("Sandbox Grid Simulation Execution")
+    print("Sextant Grid Simulation Execution")
     print("======================================")
-    print(f"Trigger Node : {args.trigger_node}")
-    print(f"Load Profile : {args.load_profile}")
+    print(f"Trigger Node  : {args.trigger_node}")
+    print(f"Load Profile  : {args.load_profile}")
     print("--------------------------------------")
     print("Simulation Status: OK")
     print("======================================")
