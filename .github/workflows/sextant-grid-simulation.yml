@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       trigger_node:
-        description: "Failure injection node"
+        description: "Failure injection node (optional sandbox parameter)"
         required: false
         default: "none"
       load_profile:
-        description: "Grid load profile"
+        description: "Grid load profile (baseline / stress / peak)"
         required: false
         default: "baseline"
 
@@ -17,19 +17,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-python@v5
+      - name: Setup Python environment
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Execute Grid Simulation
+      - name: Execute Grid Simulation (Sandbox Mode)
         run: |
-          echo "=== Sextant Grid Execution Start ==="
-          echo "Trigger Node: ${{ inputs.trigger_node }}"
-          echo "Load Profile: ${{ inputs.load_profile }}"
-          echo "Timestamp: $(date)"
+          echo "======================================"
+          echo "Sextant Grid Simulation Execution"
+          echo "======================================"
+          echo "Trigger Node  : ${{ inputs.trigger_node }}"
+          echo "Load Profile  : ${{ inputs.load_profile }}"
+          echo "Timestamp     : $(date)"
+          echo "--------------------------------------"
 
           python3 sandbox_validation/test_runs/run_grid.py \
             --trigger_node "${{ inputs.trigger_node }}" \
             --load_profile "${{ inputs.load_profile }}"
+
+          echo "--------------------------------------"
+          echo "Execution Completed"
+          echo "======================================"
