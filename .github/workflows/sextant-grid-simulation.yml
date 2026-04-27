@@ -35,7 +35,11 @@ jobs:
           if python sandbox_validation/test_runs/run_grid.py \
             --trigger_node "${{ inputs.trigger_node }}" \
             --load_profile "${{ inputs.load_profile }}"; then
+
             echo "SUCCESS"
+
           else
+
             echo "WARNING"
+
           fi
