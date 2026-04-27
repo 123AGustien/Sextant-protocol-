@@ -30,6 +30,6 @@ jobs:
           echo "Load Profile: ${{ inputs.load_profile }}"
           echo "Timestamp: $(date)"
 
-          python sandbox_validation/test_runs/run_grid.py \
+          python3 sandbox_validation/test_runs/run_grid.py \
             --trigger_node "${{ inputs.trigger_node }}" \
             --load_profile "${{ inputs.load_profile }}"
